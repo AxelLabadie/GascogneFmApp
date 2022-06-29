@@ -13,7 +13,7 @@
       </ion-header>
       <div>
       
-       <nav> <router-link to="/tabs/tab2/podcastEmissions" >  aller aux podcasts </router-link>    </nav> 
+       <nav> <router-link to="/tabs/podcastEmissions" >  aller aux podcasts </router-link>    </nav> 
       
             
          
