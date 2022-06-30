@@ -31,8 +31,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab3Page.vue')
       },
       {
-        path: 'podcastEmissions',
-        component: podcastEmissions
+         path: 'tab2/podcastEmissions/:id',
+        component: podcastEmissions  
       }
 
     ]

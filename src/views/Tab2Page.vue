@@ -19,12 +19,21 @@
          
            <ion-card onload="getEmissions()" v-for="emission in emissions" :key="emission.id">
             <ion-card-header>
-              <img :src="emission.banner" alt="emission.name">
+             
+            
+            <router-link  :to="'/tabs/tab2/podcastEmissions/'+emission.id"  >
+             <img :src="emission.banner" alt="emission.name">
               <ion-card-title>{{ emission.name }}</ion-card-title>
+              </router-link>
+            
+              
             </ion-card-header>
 
+              
+
             <ion-card-content>
-                
+              
+
             </ion-card-content>
           </ion-card>
           
@@ -46,7 +55,8 @@ export default defineComponent({
   components: {  IonHeader, IonToolbar, IonTitle, IonContent, IonPage } ,
   data: function () {
     return {
-      emissions : null
+      emissions : null,
+      
     }
   },
 methods: {
@@ -61,6 +71,9 @@ methods: {
 
 			})
   },
+
+
+
 },
 mounted() {
  

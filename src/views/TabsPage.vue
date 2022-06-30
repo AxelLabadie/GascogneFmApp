@@ -18,6 +18,15 @@
           <ion-label>Tab 3</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
+       <div>
+    {{ currentAudioName }}
+    <audio-player
+      ref="audioPlayer"
+      :audio-list="audioList.map(elm => elm.url)"
+      :before-play="handleBeforePlay"
+      theme-color="#ff2929"
+    />
+  </div>
     </ion-tabs>
   </ion-page>
 </template>
@@ -26,15 +35,29 @@
 import { defineComponent } from 'vue';
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 import { ellipse, square, triangle } from 'ionicons/icons';
+import AudioPlayer from '@liripeng/vue-audio-player'
+
+
 
 export default defineComponent({
   name: 'TabsPage',
-  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
+  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet, AudioPlayer },
   setup() {
     return {
       ellipse, 
       square, 
       triangle,
+    }
+  },
+   data() {
+    return {
+      currentAudioName: '',
+      audioList: [
+        {
+        
+          url: 'https://stream-ssl.radios-arra.fr:8443/gascognefm'
+        }
+      ]
     }
   }
 });
